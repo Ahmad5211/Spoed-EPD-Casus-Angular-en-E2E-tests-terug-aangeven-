@@ -1,0 +1,81 @@
+<br><br>
+
+
+<div class="card">
+    <form [formGroup]="userForm">
+      <div class="mt-5 box" >
+        <div class="form-row">
+          <div class="col-md-12">
+            <div class="form-group mt-4">
+              <label > Recept Name of recept voor : </label>
+            </div> 
+            <div class="form-row"  >
+                <div class="col">
+                  <input type="text" formControlName="name" class="form-control" placeholder="name">
+                </div>
+            </div>
+          </div> <br>
+          <div class="col-md-12" >
+            <div class="form-group mt-4">
+              <label > Totaal tabletten :</label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                  <input type="text" formControlName="tapletten" class="form-control" placeholder="Total tabletten" >
+                </div>
+            </div>
+          </div> <br>
+
+          <div class="col-md-12">
+            <div class="form-group mt-4">
+              <label > Beschrijving :</label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                  <input type="text" formControlName="Beschrijving" class="form-control" placeholder="optional">
+                </div>
+            </div>
+          </div> <br>
+         
+        
+        
+          <br>
+          <div class="form-row mt-4">
+            <div class="col-md-6">
+              <button type="button" class="btn btn-primary" (click)="addItem()">Add</button> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;    &nbsp; &nbsp;
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <br> <br>
+    
+    
+    <div class="col-md-8 mt-4 mb-4">
+      <table formControlName="table"  class="mat-elevation-z8">
+        <thead>
+          <tr >
+            
+  
+            <th id="br"  >Recept name</th>
+            <th id="br">Tapletten</th>
+            <th id="br">Beschrijving</th>
+            
+            </tr>
+           
+        </thead>
+        
+        <tbody >
+          <tr *ngFor = "let item of listData" >
+            <td style="border: 1px solid blue; padding-left: 3.2cm;"  >{{item.name}}</td>
+            <td style="border: 1px solid blue; padding-left: 3.2cm">{{item.tapletten}}</td>
+            <td style="border: 1px solid blue; padding-left: 3.2cm"> {{item.Beschrijving}}</td>
+            
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

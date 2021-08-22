@@ -1,0 +1,40 @@
+
+<br><br>
+
+<form class="example-form" [formGroup]="userForm" (ngSubmit)="onsubmit(userForm.value)">
+  <h1 id="h1">nieuwe medische recept</h1>
+
+  Recept naam of recept voor : <mat-form-field class="example-full-width"  appearance="fill">
+      <textarea matInput placeholder="Ex. 100 Main St" formControlName="antibiotic" required></textarea>
+     <mat-label>verplicht veld</mat-label>
+  </mat-form-field>
+
+
+  totaal tabletten :  <mat-form-field class="example-full-width" appearance="fill">
+      <textarea matInput placeholder="Ex. 100 Main St" formControlName="tabletten nummer" required></textarea>
+      <mat-label>verplicht veld</mat-label>
+     
+    </mat-form-field>
+    
+   
+
+ Beschrijving :<mat-form-field class="example-full-width" appearance="fill">
+        <textarea matInput placeholder="Ex. 100 Main St" formControlName="Beschrijving"></textarea>
+        <mat-label>optioneel</mat-label>
+  
+      </mat-form-field>
+      
+      <input matInput>
+      
+    
+
+    <button type="button" name="aanuleren" [routerLink] = "'../recepten'" class="btn btn-primary" >annuleren</button>
+    <button type="submit" name="submit" [disabled]="userForm.invalid" [routerLink] = "'../opslaan'"  class="btn btn-primary">opslaan</button>
+
+    
+  
+
+
+  
+</form>
+
